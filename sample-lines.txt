@@ -1,0 +1,17 @@
+conn=162707 fd=12 ACCEPT from IP=127.0.0.1:44678 (IP=0.0.0.0:389)
+conn=162707 fd=12 closed
+conn=162709 op=3 BIND dn="cn=admin,dc=example,dc=com" method=128
+conn=162709 op=3 BIND dn="cn=admin,dc=example,dc=com" mech=SIMPLE ssf=0
+conn=162709 op=3 RESULT tag=97 err=0 text=
+conn=162708 op=7 UNBIND
+conn=162709 op=5 SRCH base="ou=users,dc=example,dc=com" scope=1 deref=0 filder="(objectClass=*)"
+conn=162709 op=5 SRCH attr=uid
+conn=162709 op=5 SEARCH RESULT tag=101 err=0 nentries=50 text=
+conn=162711 op=17 MOD dn="uid=user1,ou=users,dc=example,dc=com"
+conn=162711 op=17 MOD attr=userPassword
+conn=162711 op=17 RESULT tag=103 err=0 text=
+conn=162711 fd=12 closed (connection lost)
+connection_input: conn=93309 deferring operation: binding
+<= mdb_equality_candidates: (objectClass) not indexed
+ppolicy_bind: Setting warning for password expiry for uid=user1,ou=users,dc=example,dc=com = 589 seconds
+
